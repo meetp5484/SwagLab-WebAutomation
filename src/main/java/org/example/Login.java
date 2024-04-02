@@ -30,8 +30,6 @@ public class Login {
 
     }
 
-
-
     @Test(priority = 2)
     public void usingNullUserAndPassword() {
         driver.navigate().back();

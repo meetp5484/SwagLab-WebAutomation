@@ -52,8 +52,18 @@ public void distroy(){
 
         WebElement usingTextOpen = driver.findElement(By.xpath("//div[contains(text(),'Sauce Labs Backpack')]"));
         usingTextOpen.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebElement addToCart = driver.findElement(By.xpath("//button[@id='add-to-cart']"));
         addToCart.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         if (Objects.equals(addToCart.getText(), "Add to cart")) {
 
             System.out.println("HomePage :AddTocart button not working ");
@@ -64,9 +74,19 @@ public void distroy(){
         }
         WebElement addToCart2 = driver.findElement(By.id("add-to-cart-sauce-labs-backpack"));
         addToCart2.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         WebElement removeProduct = driver.findElement(By.id("remove-sauce-labs-backpack"));
         removeProduct.click();
-
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         if (removeProduct.getText().equals("Remove")) {
 
             System.out.println("HomePage :product not remove");
@@ -81,9 +101,19 @@ public void wrongProduct(){
             try {
                 WebElement clickProductAndAdd = driver.findElement(By.xpath("//div[contains(text(),'Sauce Labs Backpack')]"));
                 clickProductAndAdd.click();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebElement clickProductAndAddDetails = driver.findElement(By.xpath("//div[@class='inventory_details_name large_size']"));
                 WebElement Addtocart = driver.findElement(By.xpath("//button[@id='add-to-cart']"));
                 if(Objects.equals(clickProductAndAddDetails.getText(), clickProductAndAdd.getText())){
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                     Addtocart.click();
                     Assert.assertEquals("Remove",Addtocart.getText() );
                 }
@@ -157,7 +187,7 @@ public void wrongProduct(){
             Thread.sleep(2000);
             WebElement closeUser = driver.findElement(By.id("logout_sidebar_link"));
             closeUser.click();
-
+Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -177,7 +207,6 @@ public void wrongProduct(){
             String nextPage = iterator.next();
             Thread.sleep(2000);
             driver.switchTo().window(thisPage);
-
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -194,7 +223,6 @@ public void wrongProduct(){
             String thisPage = iterator.next();
             String nextPage = iterator.next();
             driver.switchTo().window(thisPage);
-
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

@@ -82,6 +82,11 @@ public class AddToCart {
     public void cancelToRedirectHomePage() {
         WebElement cancel = driver.findElement(By.xpath("//button[@id='continue-shopping']"));
         cancel.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebElement HomePage = driver.findElement(By.xpath("//span[@class='title']"));
         Assert.assertEquals("Products", HomePage.getText());
         try {

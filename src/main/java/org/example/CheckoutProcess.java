@@ -39,13 +39,18 @@ public void distroy(){
         try {
             WebElement checkout = driver.findElement(By.xpath("//button[@id='checkout']"));
             checkout.click();
+            Thread.sleep(2000);
             WebElement firstname = driver.findElement(By.xpath("//input[@id='first-name']"));
             firstname.sendKeys("");
+            Thread.sleep(2000);
             WebElement lastname = driver.findElement(By.xpath("//input[@id='last-name']"));
             lastname.sendKeys("");
+            Thread.sleep(2000);
             WebElement postalcode = driver.findElement(By.xpath("//input[@id='postal-code']"));
             postalcode.sendKeys("");
+            Thread.sleep(2000);
             driver.findElement(By.id("continue")).click();
+            Thread.sleep(2000);
             Assert.assertEquals("https://www.saucedemo.com/checkout-step-one.html", driver.getCurrentUrl());
 
         } catch (Exception e) {
@@ -59,19 +64,20 @@ public void distroy(){
 
             WebElement checkout = driver.findElement(By.xpath("//button[@id='checkout']"));
             checkout.click();
+            Thread.sleep(2000);
             WebElement firstname = driver.findElement(By.xpath("//input[@id='first-name']"));
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             firstname.clear();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             firstname.sendKeys("3713uifas");
             WebElement lastname = driver.findElement(By.xpath("//input[@id='last-name']"));
             lastname.clear();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             lastname.sendKeys("039qjefik");
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             WebElement postalcode = driver.findElement(By.xpath("//input[@id='postal-code']"));
             postalcode.clear();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             postalcode.sendKeys("oqufq252");
             postalcode.getText();
 Assert.assertEquals("", lastname.getText());
@@ -85,19 +91,19 @@ Assert.assertEquals("", lastname.getText());
         try {
             WebElement firstname = driver.findElement(By.xpath("//input[@id='first-name']"));
             firstname.clear();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             firstname.sendKeys("Meet");
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             WebElement lastname = driver.findElement(By.xpath("//input[@id='last-name']"));
             lastname.clear();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             lastname.sendKeys("Patel");
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             WebElement postalcode = driver.findElement(By.xpath("//input[@id='postal-code']"));
             postalcode.clear();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             postalcode.sendKeys("380054");
-            Thread.sleep(1000);
+            Thread.sleep(2000);
 
         } catch (Exception e) {
             System.out.println("Error Detect");
