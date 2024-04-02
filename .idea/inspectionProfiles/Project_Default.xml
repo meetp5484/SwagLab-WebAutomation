@@ -1,0 +1,53 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="VulnerableLibrariesLocal" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="isIgnoringEnabled" value="true" />
+      <option name="ignoredModules">
+        <list>
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+          <option value="SwagLab" />
+        </list>
+      </option>
+      <option name="ignoredPackages">
+        <list>
+          <option value="com.google.guava:guava:31.0.1-jre" />
+          <option value="io.netty:netty-codec-http:4.1.67.Final" />
+          <option value="junit:junit:4.12" />
+          <option value="io.netty:netty-codec:4.1.67.Final" />
+          <option value="io.netty:netty-common:4.1.68.Final" />
+          <option value="io.netty:netty-handler:4.1.67.Final" />
+          <option value="ch.qos.logback:logback-classic:1.2.6" />
+          <option value="com.beust:jcommander:1.72" />
+          <option value="com.google.guava:guava:25.0-jre" />
+          <option value="com.squareup.okhttp3:okhttp:3.11.0" />
+          <option value="com.squareup.okio:okio:1.14.0" />
+        </list>
+      </option>
+      <option name="ignoredReasons">
+        <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/home/azilen/Meet _assignment/java dev/Spring/SwagLab">
+        <classes>
+            <class name="org.example.Login">
+                <methods>
+                    <include name="usingNullUserAndPassword"/>
+                    <include name="usingInvalidUserAndValidPassword"/>
+                    <include name="usingvalidUserAndInvalidPassword"/>
+                    <include name="usingValidUserAndPassword"/>
+                </methods>
+            </class>
+            <class name="org.example.HomePage">
+                <methods>
+                    <include name="GoInsideAndSelect"/>
+                    <include name="usingImageClickInsideOption"/>
+                    <include name="about"/>
+                    <include name="Logout"/>
+                    <include name="openTwitter"/>
+                    <include name="openFacebook"/>
+                    <include name="openLinkedIn"/>
+                </methods>
+            </class>
+            <class name="org.example.AddToCart">
+                <methods>
+                    <include name="RemoveProductOnAddToCart"/>
+                    <include name="ContinueAddToCart"/>
+                    <include name="cancelToRedirectHomePage"/>
+                </methods>
+            </class>
+
+            <class name="org.example.CheckoutProcess">
+                <methods>
+                    <include name="VerifyWithNullDetails"/>
+                    <include name="VerifyWithInvalidDetails"/>
+                    <include name="VerifyWithValidDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
