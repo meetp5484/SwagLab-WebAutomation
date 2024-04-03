@@ -24,7 +24,7 @@ public class HomePage {
     public HomePage() {
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void setUpHomePage() {
 
         System.setProperty("webdriver.chrome.driver", "/home/azilen/QA/automation/chromedriver-linux64/chromedriver");
@@ -88,36 +88,29 @@ public class HomePage {
             Assert.assertEquals("Remove", removeProduct.getText());
         }
     }
-    @Test
-public void wrongProduct(){
-            try {
+    @Test(priority = 2)
+public void wrongProduct() throws InterruptedException {
+
+
                 WebElement clickProductAndAdd = driver.findElement(By.xpath("//div[contains(text(),'Sauce Labs Backpack')]"));
                 clickProductAndAdd.click();
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+                Thread.sleep(2000);
+
                 WebElement clickProductAndAddDetails = driver.findElement(By.xpath("//div[@class='inventory_details_name large_size']"));
+
                 WebElement Addtocart = driver.findElement(By.xpath("//button[@id='add-to-cart']"));
-                if(Objects.equals(clickProductAndAddDetails.getText(), clickProductAndAdd.getText())){
-                    try {
+                if(Objects.equals("Sauce Labs Backpack", clickProductAndAddDetails.getText())){
                         Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
                     Addtocart.click();
-                    Assert.assertEquals("Remove",Addtocart.getText() );
+                    Assert.assertEquals("Remove",Addtocart.getText());
                 }
                 else {
-                    Assert.assertEquals("Add to cart",Addtocart.getText());
+
+                    Assert.assertEquals("Remove",Addtocart.getText());
                 }
                 Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
             }
 
-}
 
     @Test(priority = 1)
     public void usingImageClickInsideOption() {

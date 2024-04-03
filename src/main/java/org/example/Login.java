@@ -19,7 +19,7 @@ public class Login {
     public Login() {
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void setUpLogin() {
         System.setProperty("webdriver.chrome.driver", "/home/azilen/QA/automation/chromedriver-linux64/chromedriver");
         ChromeOptions options = new ChromeOptions();
@@ -32,7 +32,8 @@ public class Login {
 
     @Test(priority = 2)
     public void usingNullUserAndPassword() {
-        driver.navigate().back();
+      
+
         WebElement username = driver.findElement(By.xpath("//input[@id='user-name']"));
         username.click();
         username.sendKeys("");

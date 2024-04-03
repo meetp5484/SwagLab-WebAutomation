@@ -47,7 +47,7 @@ public void setUpCheckProcess(){
             Thread.sleep(2000);
             driver.findElement(By.id("continue")).click();
             Thread.sleep(2000);
-            Assert.assertEquals("https://www.saucedemo.com/checkout-step-one.html", driver.getCurrentUrl());
+            Assert.assertEquals("https://www.saucedemo.com/paymentOption.html", driver.getCurrentUrl());
 
         } catch (Exception e) {
             System.out.println("error detect");
@@ -83,8 +83,8 @@ Assert.assertEquals("", lastname.getText());
     }
 
     @Test(priority = 2)
-    public void VerifyWithValidDetails() {
-        try {
+    public void VerifyWithValidDetails() throws InterruptedException {
+            driver.findElement(By.xpath("//button[@id='checkout']")).click();
             WebElement firstname = driver.findElement(By.xpath("//input[@id='first-name']"));
             firstname.clear();
             Thread.sleep(2000);
@@ -100,10 +100,10 @@ Assert.assertEquals("", lastname.getText());
             Thread.sleep(2000);
             postalcode.sendKeys("380054");
             Thread.sleep(2000);
+            Assert.assertFalse(lastname.getText().isEmpty());
 
-        } catch (Exception e) {
-            System.out.println("Error Detect");
-        }
+
+
     }
     @AfterMethod
     public void distroy(){
