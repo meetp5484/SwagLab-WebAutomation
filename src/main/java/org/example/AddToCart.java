@@ -6,10 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 
 public class AddToCart {
@@ -29,12 +26,6 @@ public class AddToCart {
         login.usingValidUserAndPassword();
         WebElement addtocart = driver.findElement(By.xpath("//a[@class='shopping_cart_link']"));
         addtocart.click();
-    }
-    @AfterClass
-    public void distroy(){
-        if (driver != null) {
-            driver.quit();
-        }
     }
 
     @Test(priority = 1)
@@ -95,6 +86,11 @@ public class AddToCart {
             throw new RuntimeException(e);
         }
     }
-
+    @AfterMethod
+    public void distroy(){
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
 }

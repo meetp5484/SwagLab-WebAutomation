@@ -7,10 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -40,12 +37,7 @@ public class HomePage {
         login.usingValidUserAndPassword();
 
     }
-@AfterClass
-public void distroy(){
-    if (driver != null) {
-        driver.quit();
-    }
-}
+
 
     @Test(priority = 1)
     public void GoInsideAndSelect() {
@@ -244,8 +236,12 @@ Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-
+    }
+    @AfterMethod
+    public void distroy(){
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
 

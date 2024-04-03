@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -28,12 +29,7 @@ public void setUpCheckProcess(){
         WebElement shopingLink = driver.findElement(By.xpath("//a[@class='shopping_cart_link']"));
         shopingLink.click();
 }
-@AfterClass
-public void distroy(){
-    if (driver != null) {
-        driver.quit();
-    }
-}
+
     @Test(priority = 2)
     public void VerifyWithNullDetails() {
         try {
@@ -107,6 +103,12 @@ Assert.assertEquals("", lastname.getText());
 
         } catch (Exception e) {
             System.out.println("Error Detect");
+        }
+    }
+    @AfterMethod
+    public void distroy(){
+        if (driver != null) {
+            driver.quit();
         }
     }
 }

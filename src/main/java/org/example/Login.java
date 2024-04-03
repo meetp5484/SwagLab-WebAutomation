@@ -114,7 +114,7 @@ public class Login {
         String result = driver.getCurrentUrl();
         Assert.assertEquals("https://www.saucedemo.com/inventory.html", result);
     }
-    @AfterClass
+    @AfterMethod
     public void distroy() {
         if (driver != null) {
             driver.quit();
